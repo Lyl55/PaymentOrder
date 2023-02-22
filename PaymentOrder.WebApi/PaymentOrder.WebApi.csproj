@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.25" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentOrder.Core\PaymentOrder.Core.csproj" />
+    <ProjectReference Include="..\PaymentOrder.WebAdminPanel\PaymentOrder.WebAdminPanel.csproj" />
+    <ProjectReference Include="..\PaymentOrder.WebCore\PaymentOrder.WebCore.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,43 @@
+﻿@using PaymentOrder.WebCore.Models
+@model BankModel
+
+<div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <!-- Modal content -->
+    <div class="modal-content" id="editDebtModelBody">
+        <div style="overflow:auto;" class="modal-body">
+            <form asp-controller="Bank" asp-action="Save" class="form-group">
+                <input hidden asp-for="Id"/>
+
+               <div class="form-group">
+                    <label for="name" class="mr-sm-2">Name:</label>
+                    <input asp-for="Name" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">VOEN:</label>
+                    <input asp-for="VOEN" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="VOEN" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">Corrsespondent Account:</label>
+                    <input asp-for="CorrespondentAccount" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="CorrespondentAccount" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="mr-sm-2">SWIFT:</label>
+                    <input asp-for="SWIFT" class="form-control mb-2 mr-sm-2" />
+                    <span asp-validation-for="SWIFT" class="text-danger"></span>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary bgupdate">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<partial name="_ValidationScriptsPartial"/>

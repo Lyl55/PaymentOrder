@@ -1,0 +1,83 @@
+﻿<Window x:Class="PaymentOrder.AdminPanel.Views.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaymentOrder.AdminPanel.Views.Windows"
+        mc:Ignorable="d"
+        Title="Payment Order" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="btnMenu">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="Border" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#2b5493"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#2b5493"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="btnMenuBig">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="Border" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#2b5493"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <BitmapImage x:Key="LogoSource" UriSource="/Images/ABB_logo.png" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border  Grid.Column="0" Background="#134187">
+            <ScrollViewer>
+                <Grid>
+                    <StackPanel Margin="0">
+                        <Button Style="{StaticResource btnMenuBig}" Name="btnBanks" Height="55" Content="Banks" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenBanks}"/>
+                        <Button Style="{StaticResource btnMenuBig}" Name="btnBankBranches" Height="55" Content="Bank Branches" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenBankBranchs}"/>
+                        <Button Style="{StaticResource btnMenuBig}" Name="btnResidents" Height="55" Content="Residents" FontSize="18" FontWeight="Bold" Command="{Binding Path = OpenResidents}"/>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="1">
+            <Grid  Margin="0,0,0,0" Background="#f2f2f2" Name="grdCenter" >
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{StaticResource LogoSource}"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
